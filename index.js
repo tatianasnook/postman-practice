@@ -26,9 +26,9 @@ app.put('/api/items/:id', (req, res) => {
   if (itemToBeUpdated) {
     const updateItem = req.body;
     items.forEach(item => {
-      if (item.id === id) {
-        item = { ...item, ...updateItem };
-        res.json({ message: 'Item updated', item });
+      if(item.id === id){
+        item = updateItem
+        res.json({message: 'Item updated', item})
       }
     });
   } else {
